@@ -154,7 +154,7 @@ const VisualData = () => {
                                                 :
                                                 <div className="px-6 py-3 max-w-full mx-0 bg-white hover:bg-gray-50 transition-all cursor-pointer rounded-md my-2 shadow-lg flex items-center flex-col">
                                                     <div className=''>
-                                                        <p className="text-xl font-medium text-black">No Transactions found!</p>
+                                                        <p className="text-sm font-medium text-black">No Transactions found!</p>
                                                     </div>
                                                 </div>
                                             }
@@ -166,7 +166,7 @@ const VisualData = () => {
                                                 :
                                                 <div className="px-6 py-3 max-w-full mx-0 bg-white hover:bg-gray-50 transition-all cursor-pointer rounded-md my-2 shadow-lg flex items-center flex-col">
                                                     <div className=''>
-                                                        <p className="text-xl font-medium text-black">No Transactions found!</p>
+                                                        <p className="text-sm font-medium text-black">No Transactions found!</p>
                                                     </div>
                                                 </div>
                                             }

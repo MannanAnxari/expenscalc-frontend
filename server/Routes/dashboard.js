@@ -18,7 +18,7 @@ router.post('/get-dashboard', async (req, res) => {
         const user = await User.findById(userid);
 
         if (user.isactive === '0') {
-            return res.status(202).json({ success: true, status: 0 });
+            return res.status(202).json({ success: true, status: 0, assets: [] });
         }
         else {
             const asst = await Asset.find({ userid: new ObjectId(userid) })
