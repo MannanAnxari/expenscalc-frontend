@@ -7,7 +7,7 @@ import { AppContext } from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 
 const createUser = async (dta) => {
-    const { data } = await axios.post('http://localhost:5000/api/dashboard/add-assets', dta);
+    const { data } = await axios.post('https://expenscalc-server.vercel.app/api/dashboard/add-assets', dta);
     return data;
 };
 
@@ -47,7 +47,7 @@ const AddAssets = ({ setData }) => {
             transition={{ ease: "easeOut", delay: .2 }}
             className="bg-white my-8 p-8 rounded-lg" >
             <div className='container mx-auto my-12' onSubmit={handleSubmit}>
-                <h1 class="text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl mb-12">Add Your Assets</h1>
+                <h1 className="text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl mb-12">Add Your Assets</h1>
 
                 <form className="md:w-2/5 mx-auto px-2">
 

@@ -8,7 +8,7 @@ import Chart from './Chart';
 import { useNavigate } from 'react-router-dom';
 
 const createUser = async (dta) => {
-    const { data } = await axios.post('http://localhost:5000/api/dashboard/edit-assets', dta);
+    const { data } = await axios.post('https://expenscalc-server.vercel.app/api/dashboard/edit-assets', dta);
     return data;
 };
 
@@ -48,7 +48,7 @@ const ManageAssets = () => {
             {/* <Chart /> */}
 
             <div className='container px-4 my-12 mx-auto' onSubmit={handleSubmit}>
-                <h1 class="text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl mb-12">Edit Your Assets</h1>
+                <h1 className="text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl mb-12">Edit Your Assets</h1>
 
                 <form className="md:w-3/5 mx-auto px-2">
 

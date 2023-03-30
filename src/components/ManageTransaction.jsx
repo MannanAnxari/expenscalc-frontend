@@ -7,7 +7,7 @@ import { AppContext } from '../context/AppContext';
 import Chart from './Chart';
 
 const createTransaction = async (dta) => {
-    const { data } = await axios.post('http://localhost:5000/api/dashboard/make-transaction', dta);
+    const { data } = await axios.post('https://expenscalc-server.vercel.app/api/dashboard/make-transaction', dta);
     return data;
 };
 
@@ -36,7 +36,7 @@ const ManageTransaction = () => {
         e.preventDefault();
         mutate(data);
     }
-    
+
     return (
         <motion.div animate={{ opacity: 1, scale: 1, translateY: 0 }}
             initial={{ opacity: 0, scale: .8, translateY: 100 }}
@@ -45,7 +45,7 @@ const ManageTransaction = () => {
             {/* <Chart /> */}
 
             <div className='container px-4 my-12 mx-auto' onSubmit={handleSubmit}>
-                <h1 class="text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl mb-12">Create Transactions</h1>
+                <h1 className="text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl mb-12">Create Transactions</h1>
 
                 <form className="md:w-3/5 mx-auto px-2">
 
@@ -63,7 +63,7 @@ const ManageTransaction = () => {
                             </label>
                             <select onChange={(e) => { setCategory(e.target.value); setData({ ...data, category: e.target.value === 'other' ? null : e.target.value }) }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" name={`${category === 'other' ? '' : 'category'}`} >
                                 <option value="" selected hidden>Select Category</option>
-                                {user?.data?.categories.map(item => <option value={`${item}`}>{item}</option>)}
+                                {user?.data?.categories.map((item, i) => <option key={i} value={`${item}`}>{item}</option>)}
                                 <option value="other">Other</option>
                             </select>
                         </div>

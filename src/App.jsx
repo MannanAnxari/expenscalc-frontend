@@ -12,6 +12,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { Toaster } from "react-hot-toast";
 import ManageAssets from "./components/ManageAssets";
 import ManageTransaction from "./components/ManageTransaction";
+import VisualData from "./screens/VisualData";
 
 export default function App() {
   // react query
@@ -41,6 +42,7 @@ export default function App() {
               {/* dashboard */}
               <Route exact path="dashboard" element={<Dashboard />} >
                 <Route exact path="manage-assets" element={<ManageAssets />} />
+                <Route exact path="show-visual-data" element={<VisualData />} />
                 <Route exact path="manage-transactions" element={<ManageTransaction />} />
               </Route>
             </Routes>

@@ -7,7 +7,7 @@ import { AppContext } from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 
 const createUser = async (dta) => {
-    const { data } = await axios.post('http://localhost:5000/api/register', dta);
+    const { data } = await axios.post('https://expenscalc-server.vercel.app/api/register', dta);
     return data;
 };
 

@@ -78,7 +78,7 @@ router.post('/edit-assets', async (req, res) => {
         const user = await User.findById(userid);
 
         if (!user) {
-            return res.status(400).json({ success: true, message: 'Something went wrong!' });
+            return res.status(400).json({ success: false, message: 'Something went wrong!' });
         }
 
         const asst = await Asset.findOneAndUpdate({ userid: new ObjectId(userid) }, { cash, savings, bank });
@@ -111,7 +111,7 @@ router.post('/make-transaction', async (req, res) => {
         const user = await User.findById(userid);
 
         if (!user) {
-            return res.status(400).json({ success: true, message: 'Something went wrong!' });
+            return res.status(400).json({ success: false, message: 'Something went wrong!' });
         }
 
         if (!user.categories.includes(category)) {
@@ -160,7 +160,7 @@ router.post('/edit-transaction', async (req, res) => {
         const user = await User.findById(userid);
 
         if (!user) {
-            return res.status(400).json({ success: true, message: 'Something went wrong!' });
+            return res.status(400).json({ success: false, message: 'Something went wrong!' });
         }
 
         if (!user.categories.includes(category)) {
@@ -168,13 +168,18 @@ router.post('/edit-transaction', async (req, res) => {
             user.save();
         }
 
+        const dta = await Transaction.findById(transactionid);
         const asst = await Asset.findOne({ userid: new ObjectId(userid) });
 
-        if (asst[from] < amount) {
+        if (!dta) {
+            return res.status(400).json({ success: false, message: 'Something went wrong!' });
+        }
+
+        if (asst[from] + dta.amount < amount) {
             return res.status(400).json({ success: false, message: 'Insufficient Balance!' });
         }
 
-        asst[from] -= amount;
+        asst[from] = (parseInt(asst[from]) + parseInt(dta.amount)) - parseInt(amount);
 
         asst.save();
 
@@ -197,7 +202,7 @@ router.post('/get-transactions', async (req, res) => {
         const user = await User.findById(userid);
 
         if (!user) {
-            return res.status(400).json({ success: true, message: 'Something went wrong!' });
+            return res.status(400).json({ success: false, message: 'Something went wrong!' });
         }
 
         const data = await Transaction.find({ userid: new ObjectId(userid) });
@@ -211,11 +216,28 @@ router.post('/get-transactions', async (req, res) => {
 
 router.post('/delete-transaction', async (req, res) => {
 
-    const { data } = req.body;
+    const { data, userid } = req.body;
 
     try {
+        const dta = await Transaction.findById(data);
+
+        if (!dta) {
+            return res.status(400).json({ success: false, message: 'Something went wrong!' });
+        }
+
+        const asset = await Asset.findOne({ userid: new ObjectId(userid) });
+
+        if (!asset) {
+            return res.status(400).json({ success: false, message: 'Something went wrong!' });
+        }
+
+        asset[dta.paid_from] += parseInt(dta.amount);
+
+        asset.save();
+
         const deleted = await Transaction.findByIdAndRemove(new ObjectId(data));
-        return res.status(200).json({ success: true, id: deleted._id });
+
+        return res.status(200).json({ success: true, id: deleted._id, asset });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });
     }

@@ -131,9 +131,9 @@ const Header = () => {
 
                     <Disclosure.Panel className="sm:hidden">
                         <div className="space-y-1 px-2 pt-2 pb-3">
-                            {navigation.map((item) => (
+                            {navigation.map((item, i) => (
                                 <Disclosure.Button
-                                    key={item.name}
+                                    key={i}
                                     as="a"
                                     href={item.href}
                                     className={classNames(

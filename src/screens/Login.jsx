@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const createUser = async (json) => {
-  const { data } = await axios.post('http://localhost:5000/api/login', json);
+  const { data } = await axios.post('https://expenscalc-server.vercel.app/api/login', json);
   return data;
 };
 

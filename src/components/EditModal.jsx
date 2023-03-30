@@ -7,7 +7,7 @@ import { AppContext } from '../context/AppContext';
 
 
 const editTransaction = async (dta) => {
-    const { data } = await axios.post('http://localhost:5000/api/dashboard/edit-transaction', dta);
+    const { data } = await axios.post('https://expenscalc-server.vercel.app/api/dashboard/edit-transaction', dta);
     return data;
 };
 
@@ -81,7 +81,7 @@ const EditModal = ({ setShowModal, showModal, editItem }) => {
                                                     Expense Category
                                                 </label>
                                                 <select onChange={(e) => { setCategory(e.target.value); setData({ ...data, category: e.target.value === 'other' ? null : e.target.value }) }} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" name={`${category === 'other' ? '' : 'category'}`} >
-                                                    {user?.data?.categories.map(item => <option value={`${item}`} selected={data.category === item}>{item}</option>)}
+                                                    {user?.data?.categories.map((item, i) => <option key={i} value={`${item}`} selected={data.category === item}>{item}</option>)}
                                                     <option value="other">Other</option>
                                                 </select>
                                             </div>
@@ -129,6 +129,7 @@ const EditModal = ({ setShowModal, showModal, editItem }) => {
                                     <motion.button disabled={isLoading}
                                         className="text-white bg-blue-500 hover:bg-blue-600 focus:outline-none font-medium rounded-md text-sm px-4 py-2 transition-all"
                                         type="submit"
+                                        whileTap={{ scale: 0.95 }}
                                     >
                                         {isLoading
                                             ?
