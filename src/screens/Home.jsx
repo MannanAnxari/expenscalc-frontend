@@ -28,28 +28,15 @@ const Home = () => {
                                 <div id="circle" class="w-8 h-8 bg-gray-500 md:w-16 md:h-16 rounded-full"></div>
                                 <p class="pl-4 md:pl-6 text-base font-semibold md:text-2xl">{user?.data ? "Goto Dashboard..." : "Don't have an account?"}</p>
                             </div>
-                            {
-                                user?.data ?
-                                    <Link to='/register'>
-                                        <motion.button
-                                            className="text-white bg-blue-500 hover:bg-blue-600 focus:outline-none font-medium rounded-md text-sm px-4 py-2 transition-all"
-                                            whileTap={{ scale: 0.95 }}
-                                        >
-                                            Dashboard
-                                        </motion.button>
-                                    </Link>
-                                    :
-                                    <Link to='/register'>
-                                        <motion.button
-                                            className="text-white bg-blue-500 hover:bg-blue-600 focus:outline-none font-medium rounded-md text-sm px-4 py-2 transition-all"
-                                            whileTap={{ scale: 0.95 }}
-                                        >
-                                            Register
-                                        </motion.button>
-                                    </Link>
-                            }
+                            <Link to={`${user?.data ? '/dashboard' : '/register'}`}>
+                                <motion.button
+                                    className="text-white bg-blue-500 hover:bg-blue-600 focus:outline-none font-medium rounded-md text-sm px-4 py-2 transition-all"
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    {user?.data ? 'Dashboard' : 'Register'}
+                                </motion.button>
+                            </Link>
                         </div>
-
                     </div>
                 </div>
             </div>
