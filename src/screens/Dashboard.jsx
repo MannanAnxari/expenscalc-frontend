@@ -64,7 +64,7 @@ const Dashboard = () => {
           </div>
       }
 
-      <div className='absolute top-5 left-5'>
+      <div className='absolute top-5 left-5 md:block hidden'>
         <button className="btn btn-primary" onClick={() => setToggle(!toggle)}>
           <svg className="w-4 h-4" aria-hidden="true" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
             {toggle ?

@@ -66,7 +66,6 @@ const Transactions = () => {
 
     const [dates, setDates] = useState({ startDate: new Date(), endDate: new Date() })
 
-
     const handleSelect = ({ selection }) => {
 
         setDates({ startDate: selection.startDate, endDate: selection.endDate });
@@ -75,9 +74,7 @@ const Transactions = () => {
 
         setFilteredData(filtered);
 
-    }
-
-    console.log(filteredData);
+    } 
 
     return (
 

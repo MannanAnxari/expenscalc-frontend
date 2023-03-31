@@ -20,9 +20,18 @@ const DateCalendar = ({ handleSelect, dates, setToggleDate }) => {
                 </motion.button>
                 <DateRangePicker
                     onClick={() => setToggleDate(true)}
+                    controls={['calendar', 'time']}
                     ranges={[selectionRange]}
+                    maxDate={new Date()}
                     onChange={handleSelect}
                 />
+
+                {/* <Datepicker
+                    value={dates} 
+                    useRange={true}
+                    onChange={(date) => console.log(date)}
+                /> */}
+
             </div>
         </div >
     )
