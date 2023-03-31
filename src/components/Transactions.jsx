@@ -100,7 +100,7 @@ const Transactions = () => {
                         Remove Filter
                     </motion.button>
                 </div>
-                <table className="text-sm text-left text-gray-500 relative overflow-x-auto table-auto shadow-md">
+                <table className="text-sm text-left text-gray-500 relative overflow-x-auto table-auto shadow-md w-full">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
                         <tr>
                             <th className="md:px-6 sm:text-sm px-2 text-[6px] py-3">

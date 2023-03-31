@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const createUser = async (json) => {
+const authUser = async (json) => {
   const { data } = await axios.post('https://expenscalc-server.vercel.app/api/login', json);
   return data;
 };
@@ -21,7 +21,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const { mutate, isLoading } = useMutation(createUser, {
+  const { mutate, isLoading } = useMutation(authUser, {
     onSuccess: (data) => {
       if (data.success) {
         toast.success('Logged in Successfully!');
@@ -77,7 +77,9 @@ const Login = () => {
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-4">
             <motion.button disabled={isLoading} type='submit' className="text-white bg-blue-500 hover:bg-blue-600 focus:outline-none font-medium rounded-md text-sm px-4 py-2 transition-all"
-              whileTap={{ scale: 0.95 }}>Login</motion.button>
+              whileTap={{ scale: 0.95 }}>
+              {isLoading ? 'Loading...' : 'Login'}
+            </motion.button>
           </div>
         </div>
       </form>
