@@ -69,7 +69,7 @@ const VisualData = () => {
 
 
     const handleSelect = ({ selection }) => {
-        
+
 
         setDates({ startDate: selection.startDate, endDate: selection.endDate });
 
@@ -132,7 +132,7 @@ const VisualData = () => {
                                 <ul className="grid grid-cols-3 mb-0 list-none  pt-3 pb-4 flex-row" role="tablist">
                                     <li className="-mb-px mr-2 last:mr-0 flex-auto text-center ">
                                         <a
-                                            className={"text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal "}
+                                            className={"sm:text-xs text-[8px] font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal "}
                                             style={
                                                 openTab === 1
                                                     ?
@@ -157,7 +157,7 @@ const VisualData = () => {
                                     </li>
                                     <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
                                         <a
-                                            className={"text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal "}
+                                            className={"sm:text-xs text-[8px] font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal "}
                                             style={
                                                 openTab === 2
                                                     ?
@@ -182,7 +182,7 @@ const VisualData = () => {
                                     </li>
                                     <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
                                         <a
-                                            className={"text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal "}
+                                            className={"sm:text-xs text-[8px] font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal "}
                                             style={
                                                 openTab === 3
                                                     ?

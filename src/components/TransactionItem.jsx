@@ -10,12 +10,12 @@ const TransactionItem = ({ item }) => {
 
             <div className="px-6 py-3 max-w-full mx-0 bg-white hover:bg-gray-50 transition-all cursor-pointer rounded-md my-2 shadow-lg flex items-center flex-col">
                 <div className='w-full flex justify-between items-center'>
-                    <p className="text-xl font-medium text-black">Amount: {item.amount}</p>
-                    <p className="text-md text-black">Category: {item.category}</p>
+                    <p className="sm:text-xl text-md font-medium text-black">Amount: {item.amount}</p>
+                    <p className="sm:text-md text-xs text-black">Category: {item.category}</p>
                 </div>
                 <div className="w-full flex justify-between items-center">
-                    <p className="text-slate-500 text-sm">{item.description}</p>
-                    <p className="text-slate-500 text-xs">{new Date(item.createdAt).getDate()}</p>
+                    <p className="text-slate-500 sm:text-sm text-xs">{item.description}</p>
+                    <p className="text-slate-500 text-xs">{new Date(item.createdAt).toLocaleDateString()}</p>
                 </div>
             </div>
 

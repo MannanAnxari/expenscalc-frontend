@@ -6,7 +6,7 @@ function Chart({ chartData }) {
     return (
         <motion.div animate={{ opacity: 1, scale: 1, rotate: 0 }}
             initial={{ opacity: 0, scale: .8, rotate: -60 }}
-            transition={{ ease: "easeOut", delay: .2 }} className="relative">
+            transition={{ ease: "easeOut", delay: .2 }} className="relative md:order-first order-2 ">
             <Chartt
                 type="pie"
 

@@ -48,11 +48,11 @@ const EditModal = ({ setShowModal, showModal, editItem }) => {
 
             {showModal ? (
                 <>
-                    <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none" >
+                    <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 w-modal-sm outline-none focus:outline-none sm:ml-0 ml-2">
                         <form onSubmit={handleSubmit} className="relative w-auto my-6 mx-auto max-w-3xl">
                             <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                                <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                                    <h3 className="text-center text-3xl font-medium leading-none tracking-tight text-gray-900">
+                                <div className="flex sm:items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t items-center">
+                                    <h3 className="text-center sm:text-3xl text-lg font-medium leading-none tracking-tight text-gray-900">
                                         Edit Transaction
                                     </h3>
                                     <button type='button'
@@ -65,7 +65,7 @@ const EditModal = ({ setShowModal, showModal, editItem }) => {
                                     </button>
                                 </div>
                                 {/*body*/}
-                                <div className="relative p-6 flex-auto">
+                                <div className="relative sm:p-6 p-4 flex-auto">
                                     <div className="w-full mx-auto px-4">
 
                                         <div className="flex flex-wrap -mx-3">

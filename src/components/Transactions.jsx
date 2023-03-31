@@ -74,7 +74,7 @@ const Transactions = () => {
 
         setFilteredData(filtered);
 
-    } 
+    }
 
     return (
 
@@ -82,7 +82,7 @@ const Transactions = () => {
             initial={{ opacity: 0, scale: .8, translateY: 100 }}
             transition={{ ease: "easeOut", delay: .1 }} className='w-full' >
             <EditModal showModal={showModal} setShowModal={setShowModal} editItem={editItem} />
-            <div className="w-3/4 mx-auto">
+            <div className="sm:w-3/4 w-5/6 mx-auto">
                 <h1 className="text-center text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl my-12">Transactions History</h1>
                 <div className="flex gap-6 mb-6 justify-between">
                     <motion.button
@@ -100,25 +100,25 @@ const Transactions = () => {
                         Remove Filter
                     </motion.button>
                 </div>
-                <table className="w-full text-sm text-left text-gray-500 relative overflow-x-auto shadow-md">
+                <table className="text-sm text-left text-gray-500 relative overflow-x-auto table-auto shadow-md">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
                         <tr>
-                            <th scope="col" className="px-6 py-3">
+                            <th className="md:px-6 sm:text-sm px-2 text-[6px] py-3">
                                 Account
                             </th>
-                            <th scope="col" className="px-6 py-3">
+                            <th className="md:px-6 sm:text-sm px-2 text-[6px] py-3">
                                 Amount
                             </th>
-                            <th scope="col" className="px-6 py-3">
+                            <th className="md:px-6 sm:text-sm px-2 text-[6px] py-3">
                                 Category
                             </th>
-                            <th scope="col" className="px-6 py-3">
+                            <th className="md:px-6 sm:text-sm px-2 text-[6px] py-3">
                                 Description
                             </th>
-                            <th scope="col" className="px-6 py-3">
+                            <th className="md:px-6 sm:text-sm px-2 text-[6px] py-3">
                                 Date
                             </th>
-                            <th scope="col" className="px-6 py-3">
+                            <th className="md:px-6 sm:text-sm px-2 text-[6px] py-3">
                                 Action
                             </th>
                         </tr>
@@ -134,30 +134,30 @@ const Transactions = () => {
                                     return <motion.tr key={i} animate={{ opacity: 1, scale: 1, translateY: 0 }}
                                         initial={{ opacity: 0, scale: .8, translateY: 10 }}
                                         transition={{ ease: "easeOut", delay: .2 }} className='bg-white border-b hover:bg-gray-50' >
-                                        <th scope="row" className="capitalize px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        <th className="capitalize md:px-6 sm:text-sm px-2 text-[6px] leading-normal py-4 font-medium text-gray-900 whitespace-nowrap">
                                             {item.paid_from === 'savings' ? 'Savings' : item.paid_from === 'bank' ? 'Bank Account' : 'Cash'}
                                         </th>
-                                        <td className="px-6 py-4 capitalize">
+                                        <td className="md:px-6 sm:text-sm px-2 text-[6px] leading-normal py-4 capitalize">
                                             {item.amount}
                                         </td>
-                                        <td className="px-6 py-4 capitalize">
+                                        <td className="md:px-6 sm:text-sm px-2 text-[6px] leading-normal py-4 capitalize">
                                             {item.category}
                                         </td>
-                                        <td className="px-6 py-4 capitalize">
+                                        <td className="md:px-6 sm:text-sm px-2 text-[6px] leading-normal py-4 capitalize">
                                             {item.description}
                                         </td>
 
-                                        <td className="px-6 py-4 capitalize">
+                                        <td className="md:px-6 sm:text-sm px-2 text-[6px] leading-normal py-4 capitalize">
                                             {new Date(item.createdAt).toLocaleDateString()}
                                         </td>
-                                        <td className="flex items-center px-6 py-4 space-x-3">
+                                        <td className="flex items-center md:px-6 sm:text-sm px-2 text-[6px] leading-normal py-4 space-x-3">
                                             <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline" onClick={() => { setShowModal(true); setEditItem(item); }}>Edit</a>
                                             <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline" onClick={() => { setId(item._id); setToggle(true) }}>Remove</a>
                                         </td>
                                     </motion.tr>
                                 })
                                 : <td colSpan={6}>
-                                    <p className="text-center text-gray-500 py-6">No Transactions found!</p>
+                                    <p className="text-center text-gray-500 py-6 md:px-6 sm:text-sm text-[6px] ">No Transactions found!</p>
                                 </td>
                         }
                     </tbody>

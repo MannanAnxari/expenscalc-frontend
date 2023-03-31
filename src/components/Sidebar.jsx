@@ -22,8 +22,8 @@ const Sidebar = ({ toggle }) => {
                             {toggle ? '' : <span className="ml-2 text-sm font-medium md:block hidden">Dasboard</span>}
                         </Link>
                         <Link className={`flex items-center w-full h-12 px-3 mt-2 rounded ${loc.pathname === '/dashboard/manage-transactions' ? 'text-gray-200 bg-gray-700' : 'hover:bg-gray-700 hover:text-gray-300'} `} to="/dashboard/manage-transactions">
-                            <svg className="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                             </svg>
                             {toggle ? '' : <span className="ml-2 text-sm font-medium md:block hidden">Manage Transaction</span>}
                         </Link>

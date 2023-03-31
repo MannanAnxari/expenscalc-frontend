@@ -2,7 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-.apexcharts-legend { 
-    justify-content: center!important;
+.apexcharts-legend {
+    justify-content: center !important;
 }
 
+@media (max-width: 768px) {
+    .w-modal-sm {
+        width: 92%;
+    }
+
+    .rdrMonth {
+        width: 100% !important;
+    }
+
+    .rdrDefinedRangesWrapper {
+        display: none;
+    }
+}
