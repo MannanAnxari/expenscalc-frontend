@@ -81,7 +81,7 @@ const AddAssets = ({ setData }) => {
                             <motion.button disabled={isLoading} type='submit' className="text-white bg-blue-500 hover:bg-blue-600 focus:outline-none font-medium rounded-md text-sm px-4 py-2 transition-all"
                                 whileTap={{ scale: 0.95 }}>
                                 {isLoading ?
-                                    'Creating...' :
+                                    'Adding...' :
                                     'Add Assets'
                                 }
                             </motion.button>
