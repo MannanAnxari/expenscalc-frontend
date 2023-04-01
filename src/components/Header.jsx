@@ -45,7 +45,7 @@ const Header = () => {
                             </div>
                             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex flex-shrink-0 items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32px" height="32px"><path d="M6.5 3.427l9.385 4.693-1.988 1.193L6.5 6.025V3.427M5 1v6l9 4 5-3L5 1 5 1zM17.5 12.621v2.452l-4.903 2.452L17.5 12.621M19 9L5 23l14-7V9L19 9zM6.5 11l.735.551L6.5 13.757V11M5 8v15l4-12L5 8 5 8z" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32px" height="32px"><path className='fill-blue-700' d="M6.5 3.427l9.385 4.693-1.988 1.193L6.5 6.025V3.427M5 1v6l9 4 5-3L5 1 5 1zM17.5 12.621v2.452l-4.903 2.452L17.5 12.621M19 9L5 23l14-7V9L19 9zM6.5 11l.735.551L6.5 13.757V11M5 8v15l4-12L5 8 5 8z" /></svg>
                                 </div>
                                 <div className="hidden sm:ml-6 sm:block">
                                     <div className="flex space-x-4">
